@@ -54,7 +54,7 @@ func (m Mailbox) URL() string {
 }
 
 func (m Mailbox) IsEmpty() bool {
-	return m.Account == nil || m.Name != ""
+	return m.Account == nil || m.Name == ""
 }
 
 type MailboxQuery struct {
