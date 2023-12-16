@@ -114,6 +114,7 @@ func (m Mailboxes) Query(mq MailboxQuery) func() ([]Message, error) {
 				pathWithoutExtension: path.Join(basePath, emlPathFromROWID(ROWID)),
 			})
 		}
+		batchCount++
 		return msgs, nil
 	}
 }
