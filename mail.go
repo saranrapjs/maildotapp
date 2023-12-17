@@ -50,7 +50,12 @@ type Mailbox struct {
 }
 
 func (m Mailbox) URL() string {
-	return fmt.Sprintf("imap://%s/%s", m.Account.UUID, m.Name)
+	u := url.URL{
+		Scheme: "imap",
+		Host: m.Account.UUID,
+		Path: m.Name,
+	}
+	return u.String()
 }
 
 func (m Mailbox) IsEmpty() bool {
